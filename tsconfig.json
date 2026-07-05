@@ -17,25 +17,34 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
+
+    "types": [
+      "jest",
+      "node"
+    ],
+
     "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
       ]
     },
+
     "plugins": [
       {
         "name": "next"
       }
     ]
   },
+
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-, "components/task/taskList.tss"  ],
+  ],
+
   "exclude": [
     "node_modules"
   ]
