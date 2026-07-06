@@ -26,13 +26,15 @@ export default function TaskSummary({
 
     const loadSummary = async () => {
       try {
-        const response = await fetch(
-          `http://localhost:4000/api/tasks/${taskId}/summary`,
-          {
-            signal: controller.signal,
-          }
-        );
+       const API_URL =
+  process.env.NEXT_PUBLIC_API_URL ||
+  "http://localhost:4000/api";
 
+const response = await fetch(
+  `${API_URL}/tasks/${taskId}/summary`,
+  {
+    signal: controller.signal,
+  }
         if (!response.body) {
           throw new Error("No stream found");
         }
