@@ -35,6 +35,8 @@ const response = await fetch(
   {
     signal: controller.signal,
   }
+);
+
         if (!response.body) {
           throw new Error("No stream found");
         }
